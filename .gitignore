@@ -1,0 +1,12 @@
+*~
+*.swp
+*.swo
+*.swn
+*.swm
+*.vim-flavor
+*.gem
+Gemfile.lock
+VimFlavor.lock
+.tern-port
+node_modules
+tags
