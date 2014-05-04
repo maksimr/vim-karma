@@ -41,9 +41,13 @@ endfunction
 " @retun {String} Content of test suite or test case
 " TODO(maksimrv): Improve implementation. I think we can do it more cool
 function! s:getNearest(type)
-  execute '?'.a:type
+  let current_position = getpos('.')
 
-  return s:extractTestCaseContent(a:type, getline(line('.')))
+  execute '?'.a:type
+  let result = s:extractTestCaseContent(a:type, getline(line('.')))
+
+  call setpos('.', current_position)
+  return result
 endfunction
 
 " Run all tests
