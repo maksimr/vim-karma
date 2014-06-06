@@ -85,7 +85,7 @@ function! RunSpecs(...)
   execute 'chdir' s:find_project_root_dir(getcwd())
 
   let spec = get(a:000, 0, '')
-  let karma_command = escape(substitute("karma start --single-run=true --client.mocha.grep='{spec}'", "{spec}", spec, "g"), '#')
+  let karma_command = escape(substitute("karma start --single-run=true --client.useIframe=true --client.captureConsole=true --client.mocha.grep='{spec}'", "{spec}", spec, "g"), '#')
 
   execute '!clear && echo "'.karma_command.'" && '.karma_command
 endfunction
